@@ -1,0 +1,38 @@
+package:
+  name: demo
+  version: 0.1
+
+source:
+  path: .
+
+build:
+  entry_points:
+    - demo_hello = demo.hello:main
+  noarch: python
+  number: 1
+  script: python3 setup.py install --single-version-externally-managed --record=record.txt
+
+requirements:
+  build:
+    - python >=3.6
+    - setuptools
+  run:
+    - python >=3.6
+
+test:
+  imports:
+    - demo
+  commands:
+    - demo_hello
+
+about:
+  home: https://code.metoffice.gov.uk/matthewrmshin/demo
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE
+  summary: Basic Python project with bells and whistles
+  description: |
+    A basic Python project with bells and whistles,
+    for showing how to build Python and Conda packages.
+  doc_url: https://code.metoffice.gov.uk/matthewrmshin/demo
+  dev_url: https://code.metoffice.gov.uk/matthewrmshin/demo
