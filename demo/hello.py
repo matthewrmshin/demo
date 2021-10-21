@@ -5,7 +5,7 @@ def get_hello(who=None):
     """Classic starter program."""
     if not who:
         who = 'World'
-    return f'Hello {who}!'
+    return f'Hello and hi, {who}!'
 
 
 def main():
